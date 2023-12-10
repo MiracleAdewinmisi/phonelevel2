@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Phone.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <title>Phone</title>
+</head>
+<body onload="loadtime()">
+    
+    <div class="system" id="contactScreen">
+        <div class="whole p-0">
+
+            <div class="dark" ondblclick="onphone()" id="dark"></div>
+            <div class="headerofphone d-flex text-white">
+                <div class="time" id="time">
+                    <span class="small">
+                        <span id="ho"></span>
+                        <span id="mi"></span>
+                    </span>
+                </div>
+            </div>
+            <div class="circle mx-auto"></div>
+                <div class="circle2 mx-auto"></div>
+            <div class="hmd">
+                <div class="vup"></div>
+                <div class="vdown"></div>
+                <!-- <div class="power"></div> -->
+                <div class="home" onclick="sideoff()"></div>
+            </div>
+            <div class="navi d-flex pr-5" id="navi">
+                <div  onclick="gohome()" class="w-25 bg">
+                    <div class="hr"></div>
+                </div>
+                <div onclick="back()">
+                    <img src="img/Picture1.png" alt="">
+                </div>
+            </div>
+    
+    
+    
+    
+    
+            <div id="homepagemain" ondblclick="offphone()" class="homepage">
+                <div class="timewhole pl-3">
+                    <span class="time2">
+                        <span id="ho2"></span>
+                        <span id="mi2"></span>
+                        <span id="ampm"></span>
+                    </span>
+                    <div class="datebig">
+                        <span id="dayget" class="ml-1"></span>
+                        <span id="monthget"></span>
+                        <span id="dateget"></span>
+                    </div>
+                    <div class="pl-1 text-white by-licode pt-5">
+                        Miracle Adewinmisi
+                    </div>
+                </div>
+                <div class="ma d-flex container-fluid">
+                    <div class="row">
+                        <div class="col-3 text-white">
+                            <div id="ph" class="phone">
+                                <img src="img/Phone_24px.png" alt="" onclick="showphone()">
+                            </div>
+                            <!-- <div class="small">Phone</div> -->
+                        </div>
+                        <div class="col-3 text-white">
+                            <div id="vo" class="phone" onclick="showvouch()">
+                                <img src="img/Redeem_24px.png" alt="">
+                            </div>
+                            <!-- <div class="small">Pin Generator</div> -->
+                        </div>
+                        <div class="col-3 text-white">
+                       </div>
+                    </div>
+                </div>
+            </div>
+    
+        
+    
+
+            <div id="phoneinner" class="phoneinner bg-white">
+                <div class="phonehm">
+                    <!-- <div class="child"></div>
+                    <div class="child"></div>
+                    <div class="child"></div> -->
+                    <div class="dial container-fluid p-0">
+                        <div class="row mr-0 p-0">
+                            <div class="dialhead p-0 col-12">
+                                <input type="" class="w-100 border-0" id="dialinput">
+                                <span class="btn p-0 float-right mr-4"  onclick="deletenum()">
+                                    <img src="img/backspace.png" class="delimg mt-1" alt="">
+                                </span>
+                            </div>
+                            <div class="col-3 ml-4">
+                                <button class="btn p-0 mt-2" onclick="showfig('1')">
+                                    <span class="digit">1</span>
+                                    <span class="sidealpha">∞</span>
+                                </button>
+                                <button class="btn p-0 mt-2" onclick="showfig('4')">
+                                    <span class="digit">4</span>
+                                    <span class="sidealpha">GHI</span>
+                                </button>
+                                <button class="btn p-0 mt-2" onclick="showfig('7')">
+                                    <span class="digit">7</span>
+                                    <span class="sidealpha">PQRS</span>
+                                </button>
+                                <button class="btn mt-2" onclick="showfig('*')">
+                                    <span class="digit mt-1 ml-1">*</span>
+                                </button>
+                            </div>
+                            <div class="col-3 ml-3">
+                                <button class="btn p-0 mt-2" onclick="showfig('2')">
+                                    <span class="digit">2</span>
+                                    <span class="sidealpha">ABC</span>
+                                </button>
+                                <button class="btn p-0 mt-2" onclick="showfig('5')">
+                                    <span class="digit">5</span>
+                                    <span class="sidealpha">JKL</span>
+                                </button>
+                                <button class="btn p-0 mt-2" onclick="showfig('8')">
+                                    <span class="digit">8</span>
+                                    <span class="sidealpha">TUV</span>
+                                </button>
+                                <button class="btn p-0 mt-2" onclick="showfig('0')">
+                                    <span class="digit ml-1">0</span>
+                                    <span class="sidealpha">+</span>
+                                </button>
+                            </div>
+                            <div class="col-3 ml-3">
+                                <button class="btn p-0 mt-2" onclick="showfig('3')">
+                                    <span class="digit">3</span>
+                                    <span class="sidealpha">DEF</span>
+                                </button>
+                                <button class="btn p-0 mt-2" onclick="showfig('6')">
+                                    <span class="digit">6</span>
+                                    <span class="sidealpha">MNO</span>
+                                </button>
+                                <button class="btn p-0 mt-2" onclick="showfig('9')">
+                                    <span class="digit">9</span>
+                                    <span class="sidealpha">WXYZ</span>
+                                </button>
+                                <button class="btn p-0 mt-2" onclick="showfig('#')">
+                                    <span class="digit ml-1">#</span>
+                                </button>
+                            </div>
+                            <div class="calbut">
+                                
+                                <button  onclick="showavailablesim()" class="btn bg-success rounded-circle p-0"><img src="img/Phone.png" alt="call"></button>
+                                <button   data-toggle="modal" data-target="#exampleModal" class="btn bg-primary text-light fa fa-plus rounded-circle p-0"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- contact -->
+    <div class="modal fade center" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">Add New Contact</h1>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control my-1" placeholder="Number" id="digits">
+                <input type="text" class="form-control my-1" placeholder=" Name" id="lname">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button onclick="saveNew()" type="button" class="btn btn-primary" data-dismiss="modal">Save Contact</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="">
+        var allContacts = [];
+        // contactDigits : digits.value;
+        // contactName : lname.value
+        function saveNew() {
+            alert('I dy work')
+            // if ((contactDigits = digits.value) && (contactName = lname.value)) {
+            //     alert("Contact Successfully added")  
+            // }
+            // else {
+            //     alert("YOU CAN DO BETTER THAN THIS")
+            // }
+            // contactScreen.innerHTML += `
+        }
+    </script>
+
+<!--  -->
+                    <div class="alert p-0" id="choosesim">
+                        <div class="selectsimtocall bg-white p-1 rounded" id="selectsimtocall">
+                            <div class="text-primary small ml-3">Call with</div>
+                            <button class="btn w-100 p-0 mt-2 ml-3" onclick="usemtn()">MTN</button>
+                            <button class="btn w-100 p-0 mt-2 ml-3" onclick="useairtel()">Airtel</button>
+                            <button class="btn w-100 p-0 mt-2 ml-3" onclick="useglo()">Glo</button>
+                            <button class="btn w-100 p-0 mt-2 ml-3" onclick="usemobile()">9Mobile</button>
+                            <button class="text-muted cancel float-right small btn" onclick="cancel()">Cancel</button>
+                        </div>
+                        <div class="loadmessage bg-white p-3 rounded" id="loadmessage"></div>
+                    </div>
+                    <div class="balancediv" id="balancediv"></div>
+                    
+                </div>
+                <div class="callingdiv" id="callingdiv">
+                    <div class="divving">
+                        <div class="callimg rounded-circle">
+                            <img src="img/User_100px.png" alt="" class="rounded-circle">
+                        </div>
+                        <div class="callnumber text-white text-center w-100" >
+                            <span id="callnumber"></span> <br>
+                            <span id="callnet" class="smallcallingnet"></span><br>
+                            <span class="smallcalling" id="smallcalling">Calling</span>
+                        </div>
+                        <div class="calldownimg">
+                            <img src="img/Mute Unmute_50px.png" alt="">
+                            <img src="img/Keypad_64px.png" alt="">
+                            <img src="img/Speaker_64px.png" alt="">
+                        </div>
+                        <div class="callupimg willshow" id="willshow">
+                            <img src="img/Plus Math_20px.png" alt="">
+                            <img src="img/Pause_20px.png" alt="">
+                            <img src="img/Voicemail_20px.png" alt="" class="voicemail">
+                        </div>
+                        <div id="testtime" class="small d-flex text-white">
+                            <span id="hourtest"></span>
+                            <span id="minutestest"></span>
+                            <span id="secondstest"></span>
+                        </div>
+                        <button class="bg-danger btn rounded-circle border-0 cutbut" onclick="endcall()">
+                            <img src="img/Phone_24px.png" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id= "vouching"class="mx-auto vouching text-center pt-4">
+                <h4 class="text-white mb-4 mt-3">Pin Generator</h4>
+                <h6 id="warn" class="text-white small"></h6>
+               
+                    <input type="number" onclick="re()" id="noofcard" min="1" max="5" placeholder="No Of Cards" class=" p-1 rounded border-0 no mr-2"><br>
+                    <select onclick="re()" id="amount" class="p-1 rounded mt-3 border-0 mr-2">
+                        <option value="Select Amount">Select Amount</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="500">500</option>
+                        <option value="1000">1000</option>
+                    </select><br>
+                    <button onclick="showit()" data-target="#simtype" id="showsimname" class="p-1 mt-3 rounded border-0 mr-2 bg-white dropdown" data-toggle="collapse"> Select Sim type</button><br>
+                    <div class="rounded pl-4 pr-4 pb-4 mt-1 collapse mx-auto" id="simtype">
+                        <button onclick="showsim('MTN')" class=" btn bg-warning border-0 mt-2 " id="mtndiv"> 
+                            <img src="img/MTN-Logo.png" alt="" class="simlog"> 
+                            <span class="text-white">MTN</span>
+                        </button><br>
+                        <button onclick="showsim('Airtel')" class=" btn  bg-danger border-0 mt-2" id="airteldiv"> 
+                            <img src="img/Airtel--Logo.png" alt="" class="simloyg">  
+                            <span class="text-white">Airtel</span>
+                        </button><br>
+                        <button onclick="showsim('Glo')" class=" btn bg-light border-0 mt-2 " id="glodiv">
+                                <img src="img/glo.png" alt="" class="simlog">  
+                                <span class="text-success">Glo</span>
+                        </button><br>
+                        <button onclick="showsim('9Mobile')" class=" btn bg-success border-0 mt-2 " id="mobilediv">
+                                <img src="img/9mobile.png" alt="" class="simlog"> 
+                                <span class="text-white"> 9 Mobile</span>
+                        </button>
+                    </div>
+                    <input type="submit" onclick="generate()" value="Generate" class="generate bg-secondary text-white border-0 p-1 mb-2 mt-4  rounded" id="gene">
+                    <input type="submit" onclick="showcard()" value="Show Card" class="showcard bg-secondary text-white border-0 p-1 mt-4 rounded" id="showcard">
+                       
+                    <div id="alert2" class="alert2 pl-2 pr-2">
+                        <div id="alertmessage" class="p-2 alertmessage bg-white rounded mx-auto rounded" id="alert2">How old are you
+                        </div>
+                    </div>
+
+                    <div id="showvoucher" class="mx-auto pt-4">
+                        <h3 class="text-white mt-1">Generated Pin</h3>
+                        <div id="showpin" class="ml-1"></div>
+                    </div>
+               <!-- </form> -->
+                <!-- </div> -->
+            </div>
+
+            <!-- <div class="text-center">
+                <button id="addNumber" style="background-color: gray;" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Number</button>
+            </div> -->
+        </div>
+    
+        
+       
+
+
+
+
+
+
+
+
+                <div class="wholegame " id="wholegame">
+                    <div class="head">
+                        <div class="title">Licode &nbsp; Tic-Tac-Toe &nbsp; Game</div>
+                        <div id="okay" class="top w-100">
+                            <input type="text" value="" class="mt-2 pl-2 w-75" id="input1" placeholder="Player 1" required maxlength="8">
+                            <input type="text" value="" id="input2" class="pl-2 w-75" placeholder="Player 2" required maxlength="8">
+                            <input id="sub" class="btn p-0 w-50 mx-auto rounded bg-warning" onclick="start()" value="Start" type="submit">
+                        </div>
+                        <div id="welcome"  class="w-100 mx-auto text-warning"></div>
+                        <div id="player" class="w-100 mx-auto text-warning"></div>
+                    </div>
+                    <div class="in mx-auto" id="inn">
+                        <div class="winn"></div>
+                        <table>
+                            <tr>
+                                <td><button id="one" onclick="show(event)" class="playbut"></button></td>
+                                <td><button id="two" onclick="show(event)" class="playbut"></button></td>
+                                <td><button id="three" onclick="show(event)" class="playbut"></button></td>
+                            </tr>
+                            <tr>
+                                <td><button id="four" onclick="show(event)" class="playbut"></button></td>
+                                <td><button id="five" onclick="show(event)" class="playbut"></button></td>
+                                <td><button id="six" onclick="show(event)" class="playbut"></button></td>
+                            </tr>
+                            <tr>
+                                <td><button id="seven" onclick="show(event)" class="playbut"></button></td>
+                                <td><button id="eight" onclick="show(event)" class="playbut"></button></td>
+                                <td><button id="nine" onclick="show(event)" class="playbut"></button></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="scoreboard"></div>
+                    <div id="down" class="downcont"></div>
+
+                    <div id="gamealert" class="pl-3 pr-2">
+                        <div id="gamealertmessage" class="p-2 gamealertmessage bg-white rounded mx-auto rounded"></div>
+                    </div>
+                </div>
+
+            <div class="calccontainer2" id="calc">
+                <div class="heading">
+                    <span>Licode CALC</span>
+                </div>
+                <div class="calculation">
+                    <input type="text" class="w-100" id="input" value="" >
+                    <!-- <div id="output"></div> -->
+                    <input type="text" class="w-100" id="output" value="" disabled>
+                </div>
+                <div class="row1">
+                    <button id="sift" onclick="sift()">SHIFT</button>
+                    <button id="alph">ALPHA</button>
+                    <button id="top"><img src="img/up.png" alt="up"></button>
+                    <button id="right"><img src="img/right.png" alt="right"></button>
+                    <button id="mode">MODE</button>
+                    <button id="on" onclick="On()">ON</button>
+                </div>
+                <div class="row1">
+                    <button id="char">Abs</button>
+                    <button id="char">x <sup>3</sup></button>
+                    <button id="left"><img src="img/left.png" alt="left"></button>
+                    <button id="downn"><img src="img/down.png" alt="down"></button>
+                    <button id="char">x <sup>-1</sup></button>
+                    <button id="char">log∎</button>
+                </div>
+                <div class="row1">
+                    <button id="char"><sup>∎</sup>/ <sub>∎</sub></button>
+                    <button id="sqrt" onclick="sayope('√(')">√∎</button>
+                    <button id="char">x <sup>2</sup></button>
+                    <button id="powr" onclick="sayope('^')">x <sup>∎</sup></button>
+                    <button id="char" onclick="sayope('log(')">log</button>
+                    <button id="char">In</button>
+                </div>
+                <div class="row1">
+                    <button id="brac" onclick="sayFig('( )')">( - )</button>
+                    <button id="char">.,,,</button>
+                    <button id="char">hyp</button>
+                    <button id="sin" onclick="sayope('sin(')">sin</button>
+                    <button id="cos"  onclick="sayope('cos(')">cos</button>
+                    <button id="tan"  onclick="sayope('tan(')">tan</button>
+                </div>
+                <div class="row1">
+                    <button id="char">RCL</button>
+                    <button id="char">ENG</button>
+                    <button id="brac" onclick="sayFig('(')">(</button>
+                    <button id="brac" onclick="sayFig(')')">)</button>
+                    <button id="char">S⇔D</button>
+                    <button id="char">M+</button>
+                </div>
+                <div class="row2">
+                    <button id="fig" onclick="sayFig('7')">7</button>
+                    <button id="fig" onclick="sayFig('8')">8</button>
+                    <button id="fig" onclick="sayFig('9')">9</button>
+                    <button id="del" onclick="del()">DEL</button>
+                    <button id="AC" onclick="ac()"> AC</button>
+                </div>
+                <div class="row2">
+                    <button id="fig" onclick="sayFig('4')">4</button>
+                    <button id="fig" onclick="sayFig('5')">5</button>
+                    <button id="fig" onclick="sayFig('6')">6</button>
+                    <button id="operation" onclick="operation('*')">×</button>
+                    <button id="operation" onclick="operation('/')">÷</button>
+                </div>
+                <div class="row2">
+                    <button id="fig" onclick="sayFig('1')">1</button>
+                    <button id="fig" onclick="sayFig('2')">2</button>
+                    <button id="fig" onclick="sayFig('3')">3</button>
+                    <button id="operation" onclick="operation('+')">+</button>
+                    <button id="operation" onclick="operation('-')">-</button>
+                </div>
+                <div class="row2">
+                    <button id="fig" onclick="sayFig('0')">0</button>
+                    <button id="fig" onclick="sayFig('.')">.</button>
+                    <button id="fig" onclick="sayFig('e')">×10<sup>×</sup></button>
+                    <button id="ans" onclick="sayans()">Ans</button>
+                    <button id="equal" onclick="equal()">=</button>
+                </div>
+            </div>
+        </div>
+    
+        <div class="whole2" id="whole2">
+            <div class="headerofphone d-flex text-white">
+            </div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+            <div class="hmd">
+                <div class="vup"></div>
+                <div class="vdown"></div>
+                <div class="home"></div>
+            </div>
+            <div class="recieving" id="recieving">
+                <div class="divving">
+                    <div class="callimg rounded-circle">
+                        <img src="img/User_100px.png" alt="" class="rounded-circle">
+                    </div>
+                    <div class="callnumber text-white text-center w-100" >
+                        <!-- <span id="receivenumber"></span> <br> -->
+                        <span class="smallreceive">08166681287</span><br>
+                        <span class="smallcallingnet">
+                            <img src="img/SIM Card_25px.png" alt="">Nigeria
+                        </span><br>
+                    </div>
+                    <div class="calldownimg willshow" id="willshow3">
+                        <img src="img/Mute Unmute_50px.png" alt="">
+                        <img src="img/Keypad_64px.png" alt="">
+                        <img src="img/Speaker_64px.png" alt="">
+                    </div>
+                    <div class="callupimg willshow" id="willshow2">
+                        <img src="img/Plus Math_20px.png" alt="">
+                        <img src="img/Pause_20px.png" alt="">
+                        <img src="img/Voicemail_20px.png" alt="" class="voicemail">
+                    </div>
+                    <div id="testtime2" class="small d-flex text-white">
+                        <span id="hourtest2"></span>
+                        <span id="minutestest2"></span>
+                        <span id="secondstest2"></span>
+                    </div>
+                    <div class="condi">
+                        <button id="cutbut2" class="btn rounded-circle border-0 cutbut2 bg-success" onclick="receivecall2()">
+                            <img src="img/Phone_24px.png" alt="">
+                        </button>
+                        <button id="cutbut3" class="btn rounded-circle border-0 cutbut3 bg-danger" onclick="endcall()">
+                            <img src="img/Phone_24px.png" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/time.js"></script>
+    <script src="js/Phone.js"></script>
+    <script src="js/generate.js"></script>
+    <script src="js/end.js"></script>
+    <script src="js/call.js"></script>
+    <script src="js/gameforphone.js"></script>
+    <script src="js/phonecalc.js"></script>
+</body>
+</html>
